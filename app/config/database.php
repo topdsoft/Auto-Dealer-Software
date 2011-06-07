@@ -5,8 +5,8 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'kurtis',
-		'password' => 'zxcvbnm',
+		'login' => 'root',
+		'password' => '{enter your PW here}',
 		'database' => 'autodealer',
 	);
 }
