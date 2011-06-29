@@ -86,11 +86,13 @@
 			<?php echo nl2br($auto['Auto']['warranty']); ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Notes'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php if($role>1)echo nl2br($auto['Auto']['notes']); ?>
-			&nbsp;
-		</dd>
+		<?php if ($role>=2):?>
+			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Notes'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+				<?php if($role>1)echo nl2br($auto['Auto']['notes']); ?>
+				&nbsp;
+			</dd>
+		<?php endif; ?>
 		<?php foreach($auto['Image'] as $img) echo '<br>'.$this->Html->image('../files/'.$img['filename']);  ?>
 	</dl>
 </div>

@@ -30,7 +30,7 @@ class AutosController extends AppController {
 					$this->Session->setFlash(__('The auto could not be saved. Please, try again.', true));
 				}
 			}
-			$makes = $this->Auto->Make->find('list');
+			$makes = $this->Auto->Make->find('list',array('order'=>'name'));
 			$bodies = $this->Auto->Body->find('list');
 			$this->set(compact('makes', 'bodies'));
 		} else {
@@ -56,7 +56,7 @@ class AutosController extends AppController {
 			if (empty($this->data)) {
 				$this->data = $this->Auto->read(null, $id);
 			}
-			$makes = $this->Auto->Make->find('list');
+			$makes = $this->Auto->Make->find('list',array('order'=>'name'));
 			$bodies = $this->Auto->Body->find('list');
 			$this->set(compact('makes', 'bodies'));
 		} else {

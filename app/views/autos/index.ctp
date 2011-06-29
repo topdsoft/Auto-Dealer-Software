@@ -69,6 +69,7 @@
 		<li><?php if ($role==3) echo $this->Html->link(__('List Bodies', true), array('controller' => 'bodies', 'action' => 'index')); ?> </li>
 		<li><?php if ($role==3) echo $this->Html->link(__('New Body', true), array('controller' => 'bodies', 'action' => 'add')); ?> </li>
 		<li><?php if ($role>=2) echo $this->Html->link(__('List Sales', true), array('controller' => 'sales', 'action' => 'index')); ?> </li>
+		<li><?php if ($role>=2) echo $this->Html->link(__('List Customers', true), array('controller' => 'customers', 'action' => 'index')); ?> </li>
 		<li><?php //if ($role>=2) echo $this->Html->link(__('New Sale', true), array('controller' => 'sales', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

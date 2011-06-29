@@ -34,7 +34,8 @@ class UsersController extends AppController {
 	}
 
 	function add() {
-		if ($this->Auth->user('role')==3) {
+		$q=$this->paginate();
+		if ($this->Auth->user('role')==3 || !$q) {
 			if (!empty($this->data)) {
 				$this->User->create();
 				if ($this->User->save($this->data)) {
@@ -95,6 +96,9 @@ class UsersController extends AppController {
 	}
 	
 	function login() {
+		//check for first ever login
+		$q=$this->paginate();
+		if(!$q) $this->redirect(array('action' => 'add'));
 	}
 	
 	function logout() {        
